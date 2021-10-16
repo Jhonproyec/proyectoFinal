@@ -1,0 +1,61 @@
+<h2 class="mt-2 text-center">Medicos</h2>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title text-center mt-3">Agregar</h2>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="formularioMedico" (ngSubmit)="guardar()" enctype="multipart/form-data">
+            <div class="form-group">
+              <label>CMP</label>
+              <input type="number" formControlName="cmp" class="form-control" placeholder="ejemplo 12345" required>
+            </div>
+            <div class="form-group">
+              <label>Nombres</label>
+              <input type="text" formControlName="nombres" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label>Apellidos</label>
+              <input type="text" formControlName="apellidos" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label>Agregar Foto</label>
+              <input type="file" formControlName="foto" class="form-control" required>
+            </div>
+            <input type="submit" class="btn btn-primary btn-block mt-3" [disabled]="formularioMedico.invalid" value="Guardar">
+            
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Foto</th>
+            <th>CMP</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let medico of medicos">
+            <td>{{medico.idMedico}}</td>
+            <td>{{medico.fotoUrl}}</td>
+            <td>{{medico.cmp}}</td>
+            <td>{{medico.nombres}}</td>
+            <td>{{medico.apellidos}}</td>
+            <td>
+              <button class="btn btn-success btn-sm mx-2">Editar</button>
+              <button type="button" class="btn btn-danger btn-sm" (click)="eliminar(medico)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
