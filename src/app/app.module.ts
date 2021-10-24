@@ -10,12 +10,14 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { ConsultasComponent } from './consultas/consultas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MedicosComponent,
-    HomeComponent
+    HomeComponent,
+    ConsultasComponent
   ],
   imports: [
     CommonModule,
