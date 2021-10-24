@@ -11,13 +11,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ConsultasComponent } from './consultas/consultas.component';
+import { EspecialidadesComponent } from './especialidades/especialidades.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MedicosComponent,
     HomeComponent,
-    ConsultasComponent
+    ConsultasComponent,
+    EspecialidadesComponent
   ],
   imports: [
     CommonModule,
