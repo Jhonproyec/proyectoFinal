@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ConsultasComponent } from './consultas/consultas.component';
 import { EspecialidadesComponent } from './especialidades/especialidades.component';
+import { PacientesComponent } from './pacientes/pacientes.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EspecialidadesComponent } from './especialidades/especialidades.compone
     MedicosComponent,
     HomeComponent,
     ConsultasComponent,
-    EspecialidadesComponent
+    EspecialidadesComponent,
+    PacientesComponent
   ],
   imports: [
     CommonModule,
