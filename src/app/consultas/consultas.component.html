@@ -1,20 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<title>prueba</title>
+</head>
+<body>
+  <form style="background-color: rgb(81, 239, 239)">
+<div class ="container">
+	<h2>DATOS PARA PROGRAMAR CONSULTA</h2>
+	<form>
 
-<form style="background-color: rgb(189, 247, 241)">
-
-   <div class ="container">
-
-      <h2>CONSULTA</h2>
-
-		<div class ="col">
+		<div class ="form-group">
 			<label>FECHA DE LA CONSULTA</label>
-		<input type="text and number" class="form-control">
-		</div>
-		<div class ="col">
-			<label>NUMERO DEL CONSULTORIO</label>
 		<input type="text" class="form-control">
 		</div>
+		<div class ="form-group">
+			<label>No. CONSULTORIO</label>
+		<input type="text" class="form-control">
+		</div>
+    <select class="form-select" aria-label="Default select example">
+      <option selected>SELECIÓN</option>
+      <option value="1">DOCTORES</option>
+      <select class="form-select" aria-label="Default select example">
+        <option value="1">DIEGO</option>
+        <option value="2">CARLA</option>
+        <option value="3">MARCOS</option>
+      </select>
+      <option value="2">ESPECIALIDAD</option>
+      <select class="form-select" aria-label="Default select example">
+        <option selected>ESPECIALIDAD</option>
+        <option value="1">PEDIATRIA</option>
+        <option value="2">ONCÓLOGO</option>
+        <option value="3">DERMATOLOGO</option>
+      </select>
+      <option value="3">PACIENTE</option>
+      <select class="form-select" aria-label="Default select example">
+        <option selected>PACIENTE</option>
+        <option value="1">MAURICIO PÉREZ GODINEZ</option>
+        <option value="2">ROSALINDA GARCÍA FERNANDEZ</option>
+        <option value="3">DINA CASTELLÓN LUNA</option>
+      </select>
+  </select>
 
-    <button class="btn btn-success btn-sm mx-2">guardar</button>
-  </div>
+<button type= "submit" class="btn btn-warning mt-3"> Guardar</button>
 </form>
+</div>
+  </form>
+  <form style="background-color: rgb(161, 244, 244)">
+<div class="container">
+<table class="table mt-4">
+	<thead>
+		<tr>
+			<td>ID.CONSULTA</td>
+			<td>FECHA</td>
+			<td>No.CONSULTORIO</td>
+			<td>ESPECIALIDAD</td>
+			<td>MEDICO</td>
+			<td>NOMBRE DEL PACIENTE</td>
+		</tr>
+	</thead>
+<tbody>
+	<tr>
+		<td>1</td>
+			<td>"0000-00-00:00:00"</td>
+			<td>3</td>
+			<td>1</td>
+      <td>1</td>
+      <td>1</td>
+			<td>
 
+		<button class="btn btn-dark btn-sm"> editar</button>
+		<button class="btn btn-danger btn-sm"> eliminar</button>
+		</td>
+	</tr>
+</tbody>
+</table>
+</div>
+  </form>
