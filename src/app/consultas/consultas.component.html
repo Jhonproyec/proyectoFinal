@@ -21,11 +21,9 @@
 		<input type="text" class="form-control">
   </div>
   <div class ="form-group mt-4">
-      <select class="form-select" aria-label="Default select example">
-      <option selected>DOCTORES</option>
-        <option value="1">DIEGO</option>
-        <option value="2">CARLA</option>
-        <option value="3">MARCOS</option>
+      <select class="form-select" aria-label="Default select example" *ngFor="let medico of medicos">
+        <option selected>DOCTORES</option>
+        <option value="medico.idMedico">{{medico.nombres}}</option>
       </select>
 
 
@@ -36,7 +34,7 @@
         <option value="3">DERMATOLOGO</option>
       </select>
 
-      <select class="form-select" aria-label="Default select example">
+      <select class="form-select" aria-label="Default select example" >
         <option selected>PACIENTE</option>
         <option value="1">MAURICIO PÉREZ GODINEZ</option>
         <option value="2">ROSALINDA GARCÍA FERNANDEZ</option>
@@ -64,13 +62,13 @@
 		</tr>
 	</thead>
 <tbody>
-	<tr *ngFor="let consultas of consultas">
-		<td>{{consultas.idConsulta}}</td>
-			<td>{{consultas.Fecha}}</td>
-			<td>{{consultas.NoConsultorio}}</td>
-			<td>{{consultas.Especialidad}}</td>
-      <td>{{consultas.Medico}}</td>
-      <td>{{consultas.Paciente}}</td>
+	<tr *ngFor="let consulta of consultas">
+		<td>{{consulta.idConsulta}}</td>
+			<td>{{consulta.fecha}}</td>
+			<td>{{consulta.numConsultorio}}</td>
+			<td>{{consulta.especialidad['nombre']}}</td>
+      <td>{{consulta.medico['nombres']}}</td>
+      <td>{{consulta.paciente['nombres']}}</td>
 			<td>
 
 		<button class="btn btn-dark btn-sm"> editar</button>
