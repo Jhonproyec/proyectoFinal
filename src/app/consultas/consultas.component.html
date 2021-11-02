@@ -64,13 +64,13 @@
 		</tr>
 	</thead>
 <tbody>
-	<tr *ngFor="let consultas of consultas">
-		<td>{{consultas.idConsulta}}</td>
-			<td>{{consultas.Fecha}}</td>
-			<td>{{consultas.NoConsultorio}}</td>
-			<td>{{consultas.Especialidad}}</td>
-      <td>{{consultas.Medico}}</td>
-      <td>{{consultas.Paciente}}</td>
+	<tr *ngFor="let consulta of consultas">
+		<td>{{consulta.idConsulta}}</td>
+			<td>{{consulta.fecha}}</td>
+			<td>{{consulta.numConsultorio}}</td>
+			<td>{{consulta.especialidad['nombre']}}</td>
+      <td>{{consulta.medico['nombres']}}</td>
+      <td>{{consulta.paciente['nombres']}}</td>
 			<td>
 
 		<button class="btn btn-dark btn-sm"> editar</button>
