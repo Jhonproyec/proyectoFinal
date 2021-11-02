@@ -52,6 +52,7 @@
   <form style="background-color: rgb(164, 218, 218)">
 <div class="container">
 <table class="table mt-4">
+
 	<thead>
 		<tr>
       <td>ID.CONSULTA</td>
@@ -63,13 +64,13 @@
 		</tr>
 	</thead>
 <tbody>
-	<tr>
-		<td>1</td>
-			<td>"0000-00-00:00:00"</td>
-			<td>3</td>
-			<td>1</td>
-      <td>1</td>
-      <td>1</td>
+	<tr *ngFor="let consultas of consultas">
+		<td>{{consultas.idConsulta}}</td>
+			<td>{{consultas.Fecha}}</td>
+			<td>{{consultas.NoConsultorio}}</td>
+			<td>{{consultas.Especialidad}}</td>
+      <td>{{consultas.Medico}}</td>
+      <td>{{consultas.Paciente}}</td>
 			<td>
 
 		<button class="btn btn-dark btn-sm"> editar</button>
