@@ -1,33 +1,33 @@
 
-	<div class="container" >
+	<div class="container" style="background-color: beige;">
 		<h1 class="text-center">Ingresa un Paciente aquí</h1>
-		<form>
+		<form [formGroup]="pacienteForm" (ngSubmit)="guardar()"> 
 			<div class="form-group">
 				<label>Nombre</label>
-				<input type="text" class="form-control">
+				<input type="text" class="form-control" formControlName="nombres">
 			</div>
 			<div class="form-group">
 				<label>Apellido</label>
-				<input type="text" class="form-control">
+				<input type="text" class="form-control" formControlName="apellidos">
 			</div>
             <div class="form-group">
 				<label>DPI</label>
-				<input type="number" class="form-control">
+				<input type="number" class="form-control" formControlName="dni">
 			</div>
             <div class="form-group">
 				<label>Dirección</label>
-				<input type="text" class="form-control">
+				<input type="text" class="form-control" formControlName="direccion">
 			</div>
 			<div class="form-group">
 				<label>E-mail</label>
-				<input type="email" class="form-control">
+				<input type="email" class="form-control" formControlName="email">
 			</div>
 			<div class="form-group">
 				<label>Telefono</label>
-				<input type="number" class="form-control">
+				<input type="number" class="form-control" formControlName="telefono">
 			</div>
 
-			<button type="submit" class="btn btn-primary mt-3">Guardar</button>
+			<button type="submit" class="btn btn-primary mt-3" [disabled]="pacienteForm.invalid">Guardar</button>
 
 
 		</form>
@@ -50,17 +50,17 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-                <td></td>
-				<td>Juan</td>
-				<td>Perez</td>
-                <td></td>
-                <td></td>
-				<td>asdlfj@hotmail.com</td>
-				<td>287392783</td>
+			<tr *ngFor="let paciente of pacientes">
+                <td>{{paciente.idPaciente}}</td>
+				<td>{{paciente.nombres}}</td>
+				<td>{{paciente.apellidos}}</td>
+                <td>{{paciente.dni}}</td>
+                <td>{{paciente.direccion}}</td>
+				<td>{{paciente.email}}</td>
+				<td>{{paciente.telefono}}</td>
 				<td>
-					<button class="btn btn-warning btn-sm">Editar</button>
-					<button class="btn btn-danger btn-sm">Eliminar</button>
+					<button class="btn btn-warning btn-sm" (click)="editar(paciente)">Editar</button>
+					<button class="btn btn-danger btn-sm" (click)="eliminar(paciente)">Eliminar</button>
 				</td>
 			</tr>
 		</tbody>
