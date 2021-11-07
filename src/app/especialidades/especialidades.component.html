@@ -1,5 +1,5 @@
 <div class="container">
- <form style="background-color: beige">
+ <form [formGroup]="formularioespecialidades" (ngSubmit)="guardar()" enctype="multipart/form-data"style="background-color: beige">
     <legend style="font-family: Century">Hospital "Los Angeles"</legend>
     <div class="form-group">
       <h1 style="font-family: Bebas; margin-top: 50px;">Especialidades</h1><br>
@@ -7,10 +7,10 @@
       <p></p>
       <div class="form-group">
       <label>¿Cuál es la especialidad del Doctor?</label>
-      <input type="text" name="¿Cuál es la especialidad del doctor?" class="form-control">
+      <input type="text" formControlName="nombre">
       </div>
       <p></p>
-      <button type="submit" class="btn btn-primary mt-3">Guardar</button>
+      <button type="submit" class="btn btn-primary mt-3" [disabled]="formularioespecialidades.invalid">Guardar</button>
       </form>
      </div>
      <h1 class="text-center">Registro</h1>
@@ -24,14 +24,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td></td>
-          <td></td>
+          <tr *ngFor="let especialidad of especialidades">
+          <td>{{especialidad.idEspecialidad}}</td>
+          <td>{{especialidad.nombre}}</td>
           <td>
-            <button class="btn btn-warning btn-sm">Editar</button>
-            <button class="btn btn-danger btn-sm">Eliminar</button>
+            <button class="btn btn-warning btn-sm"(click)="editar(especialidad)">Editar</button>
+            <button class="btn btn-danger btn-sm"(click)="eliminar(especialidad)">Eliminar</button>
           </td>
-        </tr>
+          </tr>
       </tbody>
     </table>
     </div>

@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { MedicosComponent } from './medicos/medicos.component';
 import { ConsultasComponent } from './consultas/consultas.component';
-import { EspecialidadesComponent } from './especialidades/especialidades.component';
+import { especialidadesComponent } from './especialidades/especialidades.component';
 import { PacientesComponent } from './pacientes/pacientes.component';
 const routes: Routes = [
   {
@@ -20,7 +20,7 @@ const routes: Routes = [
   },
   {
     path: 'especialidades',
-    component: EspecialidadesComponent
+    component: especialidadesComponent
   },
   {
     path: 'pacientes',
