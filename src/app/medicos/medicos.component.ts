@@ -20,7 +20,6 @@ export class MedicosComponent implements OnInit {
   ngOnInit(): void {
     this.formularioMedico = this.fb.group({
       idMedico:        [''],
-      foto:      ['', Validators.required],
       cmp:       ['', Validators.required],
       nombres:   ['', Validators.required],
       apellidos: ['', Validators.required],
@@ -36,6 +35,7 @@ export class MedicosComponent implements OnInit {
     this.medicosService.guardarMedico(this.formularioMedico.value).subscribe(resp => {
       this.formularioMedico.reset();      
       this.medicos.push(resp);
+      window.location.reload();
     },
       error => {console.error(error)}
     )
@@ -45,6 +45,7 @@ export class MedicosComponent implements OnInit {
     this.medicosService.borrarMedico(medico.idMedico).subscribe(resp => {
       
         this.medicos.pop(medico);
+        window.location.reload();
       
     })
   }
