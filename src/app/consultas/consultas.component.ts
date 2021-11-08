@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ConsultasService } from '../services/consultas/consultas.service';
-import { EspecialidadesService } from '../services/especialidades.service';
+import { especialidadesService } from '../services/especialidades/especialidades.service';
 import { MedicosService } from '../services/medicos/medicos.service';
 import { PacientesService } from '../services/pacientes/pacientes.service';
 
@@ -11,13 +11,12 @@ import { PacientesService } from '../services/pacientes/pacientes.service';
   styleUrls: ['./consultas.component.css']
 })
 export class ConsultasComponent implements OnInit {
+  [x: string]: any;
   formularioConsultas: any;
   consultas: any;
   //En esta variable voy a guardar los datos de los medicos, para mostrarlas en los options del html
   medicos: any;
-  especialidadesService: any;
   especialidades: any;
-  PacientesService: any;
   pacientes: any;
 
   constructor(
@@ -25,8 +24,8 @@ export class ConsultasComponent implements OnInit {
     public consultasService: ConsultasService,
     //Aquí se está llamando al servicio de medicos
     public medicosService: MedicosService,
-    public EspecialidadesService: EspecialidadesService,
-    public PacienteService: PacientesService,
+    public especialidadesService: especialidadesService,
+    public pacienteService: PacientesService,
   ) { }
 
   ngOnInit(): void {
@@ -47,7 +46,7 @@ export class ConsultasComponent implements OnInit {
 
     });
     //datos pacientes
-    this.PacientesService.traerPaciente().subscribe((pacientes: any) => {
+    this.pacientesService.traerPaciente().subscribe((pacientes: any) => {
       console.log(pacientes);
       this.pacientes = pacientes;
     });
