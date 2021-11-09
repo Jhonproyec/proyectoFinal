@@ -14,10 +14,11 @@ export class ConsultasComponent implements OnInit {
   [x: string]: any;
   formularioConsultas: any;
   consultas: any;
+
   //En esta variable voy a guardar los datos de los medicos, para mostrarlas en los options del html
   medicos: any;
   especialidades: any;
-  paciente: any;
+  pacientes: any;
 
   constructor(
     public fb: FormBuilder,
@@ -40,15 +41,15 @@ export class ConsultasComponent implements OnInit {
     });
 
     //datos especialidades
-    this.especialidadesService.traerEspecialidad().subscribe((especialidades: any) => {
+    this.especialidadesService.traerEspecialidad().subscribe(especialidades => {
       console.log(especialidades);
       this.especialidades = especialidades;
-
     });
+
     //datos pacientes
     this.pacientesService.traerPacientes().subscribe((paciente: any) => {
       console.log(paciente);
-      this.paciente = paciente;
+      this.pacientes = paciente;
     });
 }
 
