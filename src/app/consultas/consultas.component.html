@@ -15,23 +15,16 @@
   </div>
   <div class ="form-group mt-4">
       <select class="form-select" aria-label="Default select example" *ngFor="let medico of medicos">
-        <option selected>DOCTORES</option>
+        <option selected>MEDICO </option>
         <option value="medico.idMedico">{{medico.nombres}}</option>
       </select>
-
-
-      <select class="form-select" aria-label="Default select example">
+      <select class="form-select" aria-label="Default select example" *ngFor="let especialidad of especialidad">
         <option selected>ESPECIALIDAD</option>
-        <option value="1">PEDIATRIA</option>
-        <option value="2">ONCÓLOGO</option>
-        <option value="3">DERMATOLOGO</option>
+        <option value="especialidad.idespecialidad">{{especialidad.nombre}}</option>
       </select>
-
-      <select class="form-select" aria-label="Default select example" >
+      <select class="form-select" aria-label="Default select example" *ngFor="let pacientes of pacientes">
         <option selected>PACIENTE</option>
-        <option value="1">MAURICIO PÉREZ GODINEZ</option>
-        <option value="2">ROSALINDA GARCÍA FERNANDEZ</option>
-        <option value="3">DINA CASTELLÓN LUNA</option>
+        <option value="paciente.idpaciente">{{pacientes.nombres}}</option>
       </select>
 </div>
 

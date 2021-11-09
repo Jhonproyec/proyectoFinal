@@ -17,7 +17,7 @@ export class ConsultasComponent implements OnInit {
   //En esta variable voy a guardar los datos de los medicos, para mostrarlas en los options del html
   medicos: any;
   especialidades: any;
-  pacientes: any;
+  paciente: any;
 
   constructor(
     public fb: FormBuilder,
@@ -25,7 +25,7 @@ export class ConsultasComponent implements OnInit {
     //Aquí se está llamando al servicio de medicos
     public medicosService: MedicosService,
     public especialidadesService: especialidadesService,
-    public pacienteService: PacientesService,
+    public pacientesService: PacientesService,
   ) { }
 
   ngOnInit(): void {
@@ -46,11 +46,10 @@ export class ConsultasComponent implements OnInit {
 
     });
     //datos pacientes
-    this.pacientesService.traerPaciente().subscribe((pacientes: any) => {
-      console.log(pacientes);
-      this.pacientes = pacientes;
+    this.pacientesService.traerPacientes().subscribe((paciente: any) => {
+      console.log(paciente);
+      this.paciente = paciente;
     });
-
 }
 
 }

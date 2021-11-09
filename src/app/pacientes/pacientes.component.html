@@ -1,7 +1,7 @@
 
 	<div class="container" style="background-color: beige;">
 		<h1 class="text-center">Ingresa un Paciente aquí</h1>
-		<form [formGroup]="pacienteForm" (ngSubmit)="guardar()"> 
+		<form [formGroup]="pacienteForm" (ngSubmit)="guardar()">
 			<div class="form-group">
 				<label>Nombre</label>
 				<input type="text" class="form-control" formControlName="nombres">
@@ -36,7 +36,8 @@
 <div class="container border mt-4">
     <h2 class="text-center mt-2">Registro de pacientes</h2>
 	<table class="table table-hover mx-auto">
-	
+
+
 		<thead>
 			<tr>
                 <th>ID</th>
