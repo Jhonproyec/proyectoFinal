@@ -5,7 +5,8 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class especialidadesService {
+export class
+especialidadesService {
   private API_SERVI = "http://localhost:8080/especialidades/";
 
   constructor(
