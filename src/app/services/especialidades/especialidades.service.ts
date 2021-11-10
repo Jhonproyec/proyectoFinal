@@ -23,6 +23,4 @@ export class especialidadesService {
   public borrarEspecialidad(id:any): Observable<any>{
     return this.httpClient.delete(this.API_SERVI +"/"+id);
   }
-
-
 }

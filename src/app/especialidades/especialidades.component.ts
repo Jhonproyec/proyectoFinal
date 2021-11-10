@@ -33,6 +33,7 @@ export class especialidadesComponent implements OnInit {
     this.especialidadesService.guardarEspecialidad(this.formularioespecialidades.value).subscribe(resp => {
       this.formularioespecialidades.reset();      
       this.especialidades.push(resp);
+      location.reload()
     },
       error => {console.error(error)}
     )
