@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, Validator } from '@angular/forms';
 import { ConsultasService } from '../services/consultas/consultas.service';
 import { especialidadesService } from '../services/especialidades/especialidades.service';
 import { MedicosService } from '../services/medicos/medicos.service';
@@ -30,6 +30,15 @@ export class ConsultasComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.formularioConsultas=this.fb.group({
+      idConsultas:[""],
+      fecha:["", Validators.required],
+      consultorio:["", Validators.required],
+      idMedicos: ["", Validators.required],
+      idPacientes: ["", Validators.required],
+      idEspecialidades: ["", Validators.required],
+      
+    })
     //Mostrar consultas
     this.consultasService.traerConsultas()?.subscribe(async consultas => {
       this.consultas = await consultas;});
@@ -51,6 +60,9 @@ export class ConsultasComponent implements OnInit {
       console.log(paciente);
       this.pacientes = paciente;
     });
+}
+guardar():void{
+  console.log(this.formularioConsultas.value)
 }
 
 }
