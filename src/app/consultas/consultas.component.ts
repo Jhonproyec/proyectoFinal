@@ -34,9 +34,9 @@ export class ConsultasComponent implements OnInit {
       idConsultas:[""],
       fecha:["", Validators.required],
       consultorio:["", Validators.required],
-      idMedicos: ["", Validators.required],
-      idPacientes: ["", Validators.required],
-      idEspecialidades: ["", Validators.required],
+      medico: ["", Validators.required],
+      paciente: ["", Validators.required],
+      especialidad: ["", Validators.required],
       
     })
     //Mostrar consultas
@@ -62,7 +62,14 @@ export class ConsultasComponent implements OnInit {
     });
 }
 guardar():void{
-  console.log(this.formularioConsultas.value)
+  this.consultasService.guardarConsultas(this.formularioConsultas.Value).subscribe(respuesta =>{
+    this.formularioConsultas.reset()
+    this.consultas.push(respuesta)
+    window.location.reload()
+  }, 
+  error=>{console.error(error)}
+  ) 
+
 }
 
 }
