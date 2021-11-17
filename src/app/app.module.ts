@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ConsultasComponent } from './consultas/consultas.component';
 import { especialidadesComponent } from './especialidades/especialidades.component';
 import { PacientesComponent } from './pacientes/pacientes.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PacientesComponent } from './pacientes/pacientes.component';
     HomeComponent,
     ConsultasComponent,
     especialidadesComponent,
-    PacientesComponent
+    PacientesComponent,
+    NavbarComponent
   ],
   imports: [
     CommonModule,

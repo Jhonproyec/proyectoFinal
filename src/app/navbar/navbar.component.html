@@ -1,0 +1,25 @@
+<!-- Barra de navegación -->
+<nav class="navbar navbar-expand-lg mb-2 navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" href="#">Registros del Hospital "Los Ángeles"</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <button  class="btn nav-link active" aria-current="page" (click)=medicos()>Control de Médicos</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn nav-link active" aria-current="page" (click)=especialidades()>Control de Especialidades</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn nav-link active" aria-current="page" (click)=pacientes()>Control de Pacientes</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn nav-link active" aria-current="page" (click)=consultas()>Control de Consultas</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

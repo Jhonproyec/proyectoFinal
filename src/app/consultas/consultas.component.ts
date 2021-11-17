@@ -13,7 +13,8 @@ import { PacientesService } from '../services/pacientes/pacientes.service';
 export class ConsultasComponent implements OnInit {
   [x: string]: any;
   formularioConsultas: any;
-  consultas: any;
+  consultas: any = {};
+  idConsulta = 0;
 
   //En esta variable voy a guardar los datos de los medicos, para mostrarlas en los options del html
   medicos: any;
@@ -31,7 +32,6 @@ export class ConsultasComponent implements OnInit {
 
   ngOnInit(): void {
     this.formularioConsultas=this.fb.group({
-      idConsultas:[""],
       fecha:["", Validators.required],
       consultorio:["", Validators.required],
       medico: ["", Validators.required],
@@ -39,19 +39,13 @@ export class ConsultasComponent implements OnInit {
       especialidad: ["", Validators.required],
       
     })
-    //Mostrar consultas
-    this.consultasService.traerConsultas()?.subscribe(async consultas => {
-      this.consultas = await consultas;});
-
     //Aquí estoy obteniendo los datos de los médicos
     this.medicosService.traerMedicos().subscribe(medicos => {
-      console.log(medicos);
       this.medicos = medicos;
     });
 
     //datos especialidades
     this.especialidadesService.traerEspecialidad().subscribe(especialidades => {
-      console.log(especialidades);
       this.especialidades = especialidades;
     });
 
@@ -61,15 +55,9 @@ export class ConsultasComponent implements OnInit {
       this.pacientes = paciente;
     });
 }
-guardar():void{
-  this.consultasService.guardarConsultas(this.formularioConsultas.Value).subscribe(respuesta =>{
-    this.formularioConsultas.reset()
-    this.consultas.push(respuesta)
-    window.location.reload()
-  }, 
-  error=>{console.error(error)}
-  ) 
-
-}
+  guardar():void{
+      this.consultas = this.formularioConsultas.value
+      console.log(this.consultas);
+  }
 
 }

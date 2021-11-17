@@ -1,4 +1,4 @@
-
+<app-navbar></app-navbar>
 <div style="background-color: rgb(206, 242, 242)">
   <div class ="container">
   <font face="courier,arial,helvetica"><h2>DATOS PARA CONSULTA</h2></font>
@@ -7,7 +7,7 @@
 
 		<div class ="form-group">
       <font face= "courier,arial,helvetica"><label>FECHA DE LA CONSULTA</label></font>
-		<input formControlName="fecha" type="text" class="form-control">
+		<input formControlName="fecha" type="date" class="form-control">
 		</div>
 		<div class ="form-group">
       <font face= "courier,arial,helvetica"><label>No. CONSULTORIO</label></font>
@@ -16,18 +16,18 @@
   <div class ="form-group mt-4">
       <select formControlName="medico" class="form-select" aria-label="Default select example">
         <option selected>MEDICO </option>
-        <option *ngFor="let medico of medicos" [ngValue]="medico.idMedico" >{{medico.nombres}}</option>
+        <option *ngFor="let medico of medicos" [ngValue]="medico.nombres" >{{medico.nombres}}</option>
       </select>
 
       <select formControlName="especialidad"class="form-select" aria-label="Default select example">
         <option selected>ESPECIALIDAD </option>
-        <option *ngFor="let especialidad of especialidades" [ngValue]="especialidad.idEspecialidad" value="especialidad.idEspecialidad">{{especialidad.nombre}}</option>
+        <option *ngFor="let especialidad of especialidades" [ngValue]="especialidad.nombre">{{especialidad.nombre}}</option>
       </select>
 
 
       <select formControlName="paciente"class="form-select" aria-label="Default select example">
         <option selected>PACIENTE</option>
-        <option  *ngFor="let paciente of pacientes" [ngValue]="paciente.idPaciente" value="paciente.idPaciente">{{paciente.nombres}}</option>
+        <option  *ngFor="let paciente of pacientes" [ngValue]="paciente.nombres">{{paciente.nombres}}</option>
       </select>
 </div>
 
