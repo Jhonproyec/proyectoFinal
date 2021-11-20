@@ -46,7 +46,7 @@
             <td>{{medico.nombres}}</td>
             <td>{{medico.apellidos}}</td>
             <td>
-              <button class="btn btn-success btn-sm mx-2">Editar</button>
+              <button class="btn btn-success btn-sm mx-2" (click)="editar(medico)">Editar</button>
               <button type="button" class="btn btn-danger btn-sm" (click)="eliminar(medico)">Eliminar</button>
             </td>
           </tr>

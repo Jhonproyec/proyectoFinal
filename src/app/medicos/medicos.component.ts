@@ -43,10 +43,16 @@ export class MedicosComponent implements OnInit {
 
   eliminar(medico:any){
     this.medicosService.borrarMedico(medico.idMedico).subscribe(resp => {
-      
         this.medicos.pop(medico);
         window.location.reload();
-      
+    })
+  }
+  editar(medico:any){
+    this.formularioMedico.setValue({
+      idMedico: medico.idMedico,
+      cmp: medico.cmp,
+      nombres: medico.nombres,
+      apellidos: medico.apellidos,
     })
   }
 
