@@ -23,7 +23,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     ConsultasComponent,
     especialidadesComponent,
     PacientesComponent,
-    NavbarComponent
+    NavbarComponent,
   ],
   imports: [
     CommonModule,

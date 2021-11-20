@@ -3,7 +3,7 @@
   <div class ="container">
   <font face="courier,arial,helvetica"><h2>DATOS PARA CONSULTA</h2></font>
 
-	<form [formGroup]="formularioConsultas" (ngSubmit)="guardar()">
+	<form [formGroup]="formularioConsultas" >
 
 		<div class ="form-group">
       <font face= "courier,arial,helvetica"><label>FECHA DE LA CONSULTA</label></font>
@@ -14,25 +14,26 @@
 		<input formControlName="consultorio" type="text" class="form-control">
   </div>
   <div class ="form-group mt-4">
-      <select formControlName="medico" class="form-select" aria-label="Default select example">
-        <option selected>MEDICO </option>
-        <option *ngFor="let medico of medicos" [ngValue]="medico.nombres" >{{medico.nombres}}</option>
+    <label for="">Medicos</label>
+      <select formControlName="medico"class="form-select" aria-label="Default select example">
+        <option *ngFor="let medico of medicos" [ngValue]="medico.nombres">{{medico.nombres}}</option>
       </select>
-
+      <label for="">Especialidades</label>
       <select formControlName="especialidad"class="form-select" aria-label="Default select example">
-        <option selected>ESPECIALIDAD </option>
         <option *ngFor="let especialidad of especialidades" [ngValue]="especialidad.nombre">{{especialidad.nombre}}</option>
       </select>
 
-
+      <label for="">Pacientes</label>
       <select formControlName="paciente"class="form-select" aria-label="Default select example">
-        <option selected>PACIENTE</option>
         <option  *ngFor="let paciente of pacientes" [ngValue]="paciente.nombres">{{paciente.nombres}}</option>
       </select>
 </div>
-
-
-<button type= "submit" class="btn btn-warning mt-3"> Guardar</button>
+  <div *ngIf="editar === false">
+    <button type= "button" (click)="guardar()" class="btn btn-warning mt-3"> Guardar</button>
+  </div>
+  <div *ngIf="editar === true">
+    <button type= "button" (click)="editarConsulta()" class="btn btn-warning mt-3"> Editar</button>
+  </div>
 </form>
 </div>
 </div>
@@ -42,25 +43,24 @@
 
 	<thead>
 		<tr>
-      <td>ID.CONSULTA</td>
       <td>FECHA</td>
       <td>No. CONSULTORIO</td>
       <td>ESPECIALIDAD</td>
-    <td>MEDICO</td>
-    <td>NOMBRE DEL PACIENTE</td>
+      <td>MEDICO</td>
+      <td>NOMBRE DEL PACIENTE</td>
+      <td>ACCIONES</td>
 		</tr>
 	</thead>
 <tbody>
 	<tr *ngFor="let consulta of consultas">
-		<td>{{consulta.idConsulta}}</td>
-			<td>{{consulta.fecha}}</td>
-			<td>{{consulta.numConsultorio}}</td>
-			<td>{{consulta.especialidad['nombre']}}</td>
-      <td>{{consulta.medico['nombres']}}</td>
-      <td>{{consulta.paciente['nombres']}}</td>
-			<td>
-        <button class="btn btn-dark btn-sm"> editar</button>
-        <button class="btn btn-danger btn-sm"> eliminar</button>
+    <td>{{consulta.fecha}}</td>
+    <td>{{consulta.consultorio}}</td>
+    <td>{{consulta.especialidad}}</td>
+    <td>{{consulta.medico}}</td>
+    <td>{{consulta.paciente}}</td>
+		<td>
+        <button class="btn btn-dark btn-sm" (click)="informacionEditar(consulta)"> editar</button>
+        <button class="btn btn-danger btn-sm" (click)="borrarConsulta(consulta)"> eliminar</button>
 
 		</td>
 	</tr>
