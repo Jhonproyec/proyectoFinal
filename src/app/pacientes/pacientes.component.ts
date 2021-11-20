@@ -43,6 +43,7 @@ export class PacientesComponent implements OnInit {
     console.log(this.pacienteForm.value)
     this.pacientesService.registrar(this.pacienteForm.value).subscribe(resp=>{
       this.pacienteForm.reset();
+      window.location.reload();
     },
     error=>{ console.error(error)}
     )
